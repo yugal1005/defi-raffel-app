@@ -20,24 +20,58 @@ class NoInternet extends StatelessWidget {
             color: const Color.fromRGBO(22, 33, 62, 1),
           ),
           SizedBox(
-            height:MediaQuery.of(context).size.height * 0.332 ,
-            width: double.infinity,
-            child: CustomPaint(
-              size: Size(MediaQuery.of(context).size.height * 0.34,double.infinity),
-              painter: RPSCustomPainter(),
+            height: MediaQuery.of(context).size.height * 0.332,
+            width: double.maxFinite,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Positioned.fill(
+                  child: CustomPaint(
+                    size: Size(MediaQuery.of(context).size.height * 0.34,
+                        double.maxFinite),
+                    painter: RPSCustomPainter(),
+                  ),
+                ),
+                Positioned(
+                  top: 30,
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: const TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "No Internet Connection\n",
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        WidgetSpan(child: SizedBox(height: 40)),
+                        TextSpan(
+                            text:
+                                "You are not connected the internet\nPlease check your internet connectivity",
+                            style: TextStyle(fontSize: 16)),
+                      ],
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 70,
+                  child: SizedBox(
+                    height: 50,
+                    width: 120,
+                    child: ElevatedButton(
+                      style: const ButtonStyle(elevation: MaterialStatePropertyAll(5),backgroundColor: MaterialStatePropertyAll(Colors.white),),
+                      onPressed: () {},
+                      child: const Text(
+                        "Retry",
+                        style: TextStyle(color: Colors.black,fontSize: 16),
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
-          // Container(
-          //   height: MediaQuery.of(context).size.height * 0.332,
-          //   width: double.infinity,
-          //   decoration: BoxDecoration(
-          //       borderRadius: const BorderRadius.only(
-          //         topLeft: Radius.circular(200),
-          //         topRight: Radius.circular(200),
-          //       ),
-          //       color: Theme.of(context).primaryColor),
-          //   child: const Text("No Internet"),
-          // )
         ],
       ),
     );

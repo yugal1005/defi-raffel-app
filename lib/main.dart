@@ -1,3 +1,4 @@
+import 'package:defi_rafel_app/screens/home_screen.dart';
 import 'package:defi_rafel_app/screens/login_screen.dart';
 import 'package:defi_rafel_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,11 +16,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Defi Raffle',
       theme: ThemeData(
-        primaryColor: const Color.fromRGBO(22, 33, 62, 1)
+        primaryColor: const Color.fromRGBO(22, 33, 62, 1),
+        cardColor: const Color.fromRGBO(15, 182, 132, 1),
+        focusColor: const Color.fromRGBO(10, 57, 111, 1),
+        highlightColor: const Color.fromRGBO(98, 224, 242, 1)
       ),
       routes: {
         "/":(context) => const SplashScreen(),
-        LoginScreen.id:(context) => const LoginScreen()
+        LoginScreen.id:(context) => const LoginScreen(),
+        HomeScreen.id:(context) => const HomeScreen(),
       },
     );
   }

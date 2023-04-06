@@ -1,3 +1,4 @@
+import 'package:defi_rafel_app/screens/login_screen.dart';
 import 'package:defi_rafel_app/screens/no_internet_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +7,6 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const NoInternet();
+    return const LoginScreen();
   }
 }

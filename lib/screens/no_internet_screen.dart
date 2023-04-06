@@ -60,7 +60,7 @@ class NoInternet extends StatelessWidget {
                     height: 50,
                     width: 120,
                     child: ElevatedButton(
-                      style: const ButtonStyle(elevation: MaterialStatePropertyAll(5),backgroundColor: MaterialStatePropertyAll(Colors.white),),
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.white,elevation: 2,shadowColor: Colors.white),
                       onPressed: () {},
                       child: const Text(
                         "Retry",
